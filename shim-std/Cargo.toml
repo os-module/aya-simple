@@ -1,0 +1,8 @@
+[package]
+name = "shim-std"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+aya-obj = { workspace = true }
+libc = { version = "0.2.105", default-features = false }

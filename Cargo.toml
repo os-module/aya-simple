@@ -1,0 +1,44 @@
+[workspace]
+members = [
+    "aya",
+    "shim-std",
+    "test/kernel_sim",
+    "test/user_def",
+    "aya-log" ,
+    "rbpf"
+]
+
+resolver = "2"
+
+[workspace.package]
+authors = ["linfeng"]
+license = "MIT OR Apache-2.0"
+edition = "2021"
+
+
+
+[workspace.dependencies]
+aya-obj = { git = "https://github.com/aya-rs/aya", rev = "3d57d35", features = ["std"] }
+aya-log-common = { git = "https://github.com/aya-rs/aya", rev = "3d57d35", default-features = false }
+aya-ebpf = { git = "https://github.com/aya-rs/aya", rev = "3d57d35" }
+async-io = { version = "2.0", default-features = false }
+#aya-obj = { path = "../../os-modules/eebpf/aya/aya-obj",  features = ["std"]  }
+#aya-log-common = { path = "../../os-modules/eebpf/aya/aya-log-common", default-features = false }
+#aya-ebpf = { path = "../../os-modules/eebpf/aya/ebpf/aya-ebpf" }
+
+bitflags = { version = "2.2.1", default-features = false }
+object = { version = "0.36", default-features = false }
+num_enum = { version = "0.7", default-features = false }
+thiserror = { version = "1", default-features = false }
+lazy_static = { version = "1", default-features = false }
+assert_matches = { version = "1.5.0", default-features = false }
+
+env_logger = { version = "0.11", default-features = false }
+bytes = { version = "1", default-features = false }
+tokio = { version = "1.24.0", default-features = false }
+log = { version = "0.4", default-features = false }
+
+testing_logger = { version = "0.1.1", default-features = false }
+
+[profile.release]
+#panic = "abort"

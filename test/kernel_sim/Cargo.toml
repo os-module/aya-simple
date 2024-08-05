@@ -1,0 +1,18 @@
+[package]
+name = "kernel_sim"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+shim-std = { path = "../../shim-std" }
+aya-obj = { workspace = true }
+log = "0.4"
+thiserror-no-std = "2.0"
+spin = "0.9"
+ringbuf = "0.4"
+bitflags = { workspace = true }
+int-enum = "1.1.2"
+rbpf = { path = "../../rbpf", default-features = false }
+aya-ebpf = { workspace = true }
+printf-compat = { version = "0.1.1", default-features = false }
+downcast-rs = { version = "1.2.0", default-features = false }

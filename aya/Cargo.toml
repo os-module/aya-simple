@@ -1,0 +1,24 @@
+[package]
+name = "aya"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+hashbrown = { version = "0.14" }
+thiserror = { workspace = true }
+aya-obj = { workspace = true }
+bitflags = { workspace = true }
+log = { workspace = true }
+lazy_static = {  workspace = true }
+object = { workspace = true, features = ["elf", "read_core", "std", "write"] }
+bytes = { workspace = true }
+assert_matches = { workspace = true }
+shim-std = { path = "../shim-std" }
+
+tokio = { workspace = true, features = ["rt"], optional = true }
+async-io = { workspace = true, optional = true }
+
+[features]
+default = []
+async_tokio = ["tokio/net"]
+async_std = ["dep:async-io"]
